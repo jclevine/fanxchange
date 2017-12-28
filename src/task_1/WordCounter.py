@@ -1,11 +1,15 @@
+from collections import Counter
+
+
 class WordCounter(object):
     def __init__(self, filepath):
         with open(filepath) as f:
-            self._count = f.read().split()
+            self._words = f.read().split()
+            self._counter = Counter(self._words)
 
     @property
     def count(self):
-        return len(self._count)
+        return len(self._words)
 
     def get_top_n_words(self, n):
-        return {}
+        return self._counter.most_common(n)
