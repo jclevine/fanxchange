@@ -3,7 +3,8 @@ from os.path import relpath, join
 from src.task_1.WordCounter import WordCounter
 
 
-class WordCounterTest(TestCase):
+class WordCounterCountingTest(TestCase):
+
     def test_file_not_found(self):
         self.assertRaisesRegexp(IOError, '.*No such file', WordCounter, relpath(join('task_1', 'dne.txt')))
 

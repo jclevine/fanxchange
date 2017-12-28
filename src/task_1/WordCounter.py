@@ -6,3 +6,6 @@ class WordCounter(object):
     @property
     def count(self):
         return len(self._count)
+
+    def get_top_n_words(self, n):
+        return {}
